@@ -1,0 +1,294 @@
+{
+	"info": {
+		"_postman_id": "a8c58286-6675-4bc8-9a9f-8a39b5a8ed88",
+		"name": "warehoure service",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "17983995"
+	},
+	"item": [
+		{
+			"name": "Check Warehouse Data",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/warehouse/FINISHED",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"warehouse",
+						"FINISHED"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Check Warehouse Data",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/warehouse/RAW",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"warehouse",
+								"RAW"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 13 Sep 2025 15:19:45 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"warehouse\": \"RAW\",\n    \"stocks\": [\n        {\n            \"productId\": 1,\n            \"process\": null,\n            \"qty\": 500\n        },\n        {\n            \"productId\": 2,\n            \"process\": null,\n            \"qty\": 800\n        }\n    ]\n}"
+				}
+			]
+		},
+		{
+			"name": "Monitoring Summary",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/monitoring",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"monitoring"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Monitoring Summary",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/monitoring",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"monitoring"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 13 Sep 2025 15:21:24 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"rawMaterials\": [\n        {\n            \"productId\": 1,\n            \"productName\": \"Baju Bayi Model A\",\n            \"totalQuantity\": 500\n        },\n        {\n            \"productId\": 2,\n            \"productName\": \"Celana Bayi Model B\",\n            \"totalQuantity\": 800\n        }\n    ],\n    \"workInProgress\": [\n        {\n            \"process\": \"CUTTING\",\n            \"totalQuantity\": 50\n        },\n        {\n            \"process\": \"SAWING\",\n            \"totalQuantity\": 20\n        }\n    ],\n    \"finishedGoods\": [\n        {\n            \"productId\": 1,\n            \"productName\": \"Baju Bayi Model A\",\n            \"totalQuantity\": 150\n        }\n    ]\n}"
+				}
+			]
+		},
+		{
+			"name": "Production Time Calculation",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/production/calc/1?qty=90",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"production",
+						"calc",
+						"1"
+					],
+					"query": [
+						{
+							"key": "qty",
+							"value": "90"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Production Time Calculation",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/production/calc/1?qty=10",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"production",
+								"calc",
+								"1"
+							],
+							"query": [
+								{
+									"key": "qty",
+									"value": "10"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 13 Sep 2025 15:22:59 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"productId\": 1,\n    \"qty\": 10,\n    \"estimatedTimeMinutes\": 100,\n    \"processBreakdown\": {\n        \"finishing\": 50,\n        \"sawing\": 30,\n        \"cutting\": 20\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "Start Production",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"productId\": 1,\r\n    \"qty\": 10,\r\n    \"process\": \"FINISHING\" //SAWING //FINISHING //CUTTING\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/production/start",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"production",
+						"start"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Start Production",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"productId\": 1,\r\n    \"qty\": 80,\r\n    \"process\": \"FINISHING\" //SAWING //FINISHING //CUTTING\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/production/start",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"production",
+								"start"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 13 Sep 2025 16:17:59 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": \"SUCCESS\",\n    \"message\": \"Production process FINISHING for product 1 started successfully for 80 units.\"\n}"
+				}
+			]
+		}
+	]
+}
