@@ -8,7 +8,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("/production")
+@RequestMapping("api/production")
 public class ProductionController {
 
     private final ProductionService productionService;
