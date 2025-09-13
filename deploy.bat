@@ -9,7 +9,7 @@ docker-compose rm -f warehouse-service
 
 REM Remove only the application image to force rebuild
 echo Removing old application image...
-docker rmi warhouse_service-warehouse-service >nul 2>&1 || echo No old image to remove
+docker rmi warehouse_service-warehouse-service >nul 2>&1 || echo No old image to remove
 
 REM Build and start only the application service
 echo Building and starting warehouse service...

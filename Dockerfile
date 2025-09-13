@@ -26,4 +26,4 @@ RUN ./mvnw clean package -DskipTests
 EXPOSE 8080
 
 # Run the application
-CMD ["java", "-jar", "target/warhouse_service-0.0.1-SNAPSHOT.jar"]
+CMD ["java", "-jar", "target/warehouse_service-0.0.1-SNAPSHOT.jar"]

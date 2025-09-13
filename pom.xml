@@ -9,10 +9,10 @@
         <relativePath/>
     </parent>
     <groupId>com.van</groupId>
-    <artifactId>warhouse_service</artifactId>
+    <artifactId>warehouse_service</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>warhouse_service</name>
-    <description>warhouse_service</description>
+    <name>warehouse_service</name>
+    <description>warehouse_service</description>
     <properties>
         <java.version>21</java.version>
     </properties>

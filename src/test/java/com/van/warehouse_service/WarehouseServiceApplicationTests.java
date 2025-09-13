@@ -1,10 +1,10 @@
-package com.van.warhouse_service;
+package com.van.warehouse_service;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class WarhouseServiceApplicationTests {
+class WarehouseServiceApplicationTests {
 
     @Test
     void contextLoads() {
