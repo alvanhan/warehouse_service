@@ -16,6 +16,11 @@
    ```sh
    docker-compose up --build
    ```
+   or
+   - **For Windows:**  
+     Run `deploy.bat`
+   - **For Linux/MacOS:**  
+     Run `./deploy.sh`
 3. The service will be available on port 8080.
 
 ## API Endpoints
